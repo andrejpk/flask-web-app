@@ -28,8 +28,10 @@ steps:
     # The displayName is shows in the pipeline UI when a build runs
     displayName: "Install Dependencies"
 
-  - script: |
+  - bash: |
       python3.6 -m pytest
+
+    workingDirectory: "hello_app"
     displayName: "Run tests"
 
   - task: ArchiveFiles@2
