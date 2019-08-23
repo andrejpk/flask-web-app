@@ -7,12 +7,11 @@ variables:
   ConnectedServiceName: "Andrej's Azure Subscription"
   WebAppName: "ak-fask-pipedemo"
 
-pool:
-  vmImage: "ubuntu-latest"
-
 jobs:
   - job: app_service_zip_build
     displayName: App Service ZIP build
+    pool:
+      vmImage: "ubuntu-latest"
     steps:
       - task: UsePythonVersion@0
         inputs:
