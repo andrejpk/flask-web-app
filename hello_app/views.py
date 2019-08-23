@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template
 from . import app
+from formula import magicNumber
 
 @app.route("/")
 def home():
@@ -26,3 +27,8 @@ def hello_there(name = None):
 @app.route("/api/data")
 def get_data():
     return app.send_static_file("data.json")
+
+
+@app.route("/api/number")
+def get_data():
+    return magicNumber()
