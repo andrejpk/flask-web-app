@@ -24,15 +24,15 @@ steps:
       pip3.6 install setuptools
       pip3.6 install -r requirements.txt
       pip3.6 install pytest
-      deactivate && source antenv3.6/bin/activate
 
     # The displayName is shows in the pipeline UI when a build runs
     displayName: "Install Dependencies"
 
   - script: |
+      source antenv3.6/bin/activate
+      cd hello_app
       python3.6 -m pytest
 
-    workingDirectory: "hello_app"
     displayName: "Run tests"
 
   - task: ArchiveFiles@2
